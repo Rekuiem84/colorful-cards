@@ -75,6 +75,7 @@ body {
 		color: white;
 	}
 }
+
 .card:nth-child(6n + 1) {
 	--bg-color: #f34343;
 }
