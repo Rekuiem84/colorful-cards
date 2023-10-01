@@ -1,0 +1,95 @@
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: sans-serif;
+}
+body {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-evenly;
+	align-content: center;
+	gap: 2rem;
+	min-height: 100vh;
+	padding: 2rem;
+	background-color: #000;
+}
+.card {
+	max-width: 500px;
+	flex: 1 1 420px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 1.8rem;
+	position: relative;
+	color: white;
+	background-color: #121212;
+	border-radius: 1rem;
+	overflow: hidden;
+	isolation: isolate;
+	border: none;
+	outline: none;
+	text-align: start;
+	transition: all 0.5s ease;
+
+	&:focus-visible {
+		outline: 3px solid currentColor;
+		outline-offset: -6px;
+	}
+
+	&::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		translate: 50% -50%;
+		width: 180px;
+		aspect-ratio: 1;
+		border-radius: 100%;
+		background-color: var(--bg-color);
+		z-index: -1;
+		transition: all 0.6s ease-in-out;
+	}
+	&:is(:hover, :focus-visible)::before {
+		width: 250%;
+	}
+
+	& .title {
+		font-size: 2.6rem;
+	}
+	& .date {
+		margin-top: 1.5em;
+		font-size: 1.4rem;
+
+		& span {
+			color: gold;
+			transition: color 0.5s ease-in-out;
+		}
+	}
+
+	&:is(:hover, :focus-visible) .date span {
+		color: white;
+	}
+}
+.card:nth-child(6n + 1) {
+	--bg-color: #f34343;
+}
+.card:nth-child(6n + 2) {
+	--bg-color: #f9b234;
+}
+.card:nth-child(6n + 3) {
+	--bg-color: #3ecd5e;
+}
+.card:nth-child(6n + 4) {
+	--bg-color: #4c49ea;
+}
+.card:nth-child(6n + 5) {
+	--bg-color: #952aff;
+}
+.card:nth-child(6n + 6) {
+	--bg-color: #dd4cc7;
+}
